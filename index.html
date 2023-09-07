@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Karate</title>
+  <link rel="stylesheet" href="data/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="imagen">
+      <img src="img/yolo.png" height="150">
+    </div>
+    
+    <h2>Iniciar sesión</h2>
+    <form method="dialog" onsubmit="return validarFormulario()">
+      <div class="form-group">
+        <label for="IDE">Numero de cedula:</label>
+        <input type="text" id="IDE" name="IDE" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" id="showPassword" style="margin-top: 10px;">Mostrar contraseña</button>
+        <button type="button" id="hidePassword" style="margin-top: 10px;">Ocultar contraseña</button>
+      </div>
+      <div class="form-group">
+        <button type="submit"><a href="admin_ta.html" style="text-decoration: none; color: white;">Iniciar sesión como Administrador</a></button>
+        <br>
+        <br>
+        <button type="submit"><a href="user_ta.html" style="text-decoration: none; color: white;">Iniciar sesión como Deportista</a></button>
+      </div>
+      <div class="Register">
+        <p>¿No tiene cuenta aun? <a href="#" class="registro">Registrarse</a> </p>
+      </div>
+    </form>
+  </div>
+
+  <div class="container2 inactive">
+    <div class="imagen">
+      <img src="img/yolo.png" height="150">
+    </div>
+    
+    <h2>Crear cuenta</h2>
+    <form method="post">
+      <div class="form-group">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" id="Nombre" name="Nombre" required>
+      </div>
+   
+      <div class="form-group">
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="Apellido" name="Apellido" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Academia">Academia:</label>
+        <input type="text" id="Academia" name="Academia" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Edad">Edad:</label>
+        <input type="text" id="Edad" name="Edad" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password2" name="password" required>
+        <button type="button" id="showPassword2">Mostrar contraseña</button>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar contraseña:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+
+      <div class="form-group">
+        <a href="#" class="result_link"><button type="submit">Crear cuenta</button></a>
+      </div>
+    </form>
+
+    <div class="form-group">
+      <p>¿Ya tienes cuenta? <a href="#" class="login_but">Inicia sesión aquí</a></p>
+    </div>
+  </div>
+  <div class="mobile-menu2 inactive">
+    <h2 style="text-align: center; color: white;">INSCRIPCION EXITOSA</h2>
+    <button class="cerrar-resultado">Cerrar</button>
+  </div>
+  <script>
+    function validarFormulario() {
+      const IDE = document.getElementById('IDE').value;
+      const password = document.getElementById('password').value;
+
+      if (IDE === '' && password === '') {
+        alert('Debes llenar al menos uno de los campos.');
+        return false; 
+      }
+
+      
+      return true;
+    }
+
+    const passwordInput = document.getElementById('password');
+    const showPasswordButton = document.getElementById('showPassword');
+    const hidePasswordButton = document.getElementById('hidePassword');
+
+    showPasswordButton.addEventListener('click', () => {
+      passwordInput.type = 'text';
+    });
+
+    hidePasswordButton.addEventListener('click', () => {
+      passwordInput.type = 'password';
+    });
+
+
+    const passwordInput2= document.getElementById('password2');
+    const showPasswordButton2 = document.getElementById('showPassword2');
+
+    showPasswordButton2.addEventListener('click', () => {
+      if (passwordInput2.type === 'password') {
+        passwordInput2.type = 'text';
+        showPasswordButton2.textContent = 'Ocultar contraseña';
+      } else {
+        passwordInput2.type = 'password';
+        showPasswordButton2.textContent = 'Mostrar contraseña';
+      }
+    });
+
+    const login = document.querySelector('.login_but');
+    const crear = document.querySelector('.registro');
+    const login_panel = document.querySelector('.container');
+    const crear_panel = document.querySelector('.container2');
+
+    login.addEventListener('click', cambio);
+    crear.addEventListener('click', cambio);
+
+    function cambio(){
+      login_panel.classList.toggle('inactive');
+      crear_panel.classList.toggle('inactive');
+    }
+
+    const hammenu2=document.querySelector('.mobile-menu2');
+const resultado=document.querySelector('.result_link');
+const cerrarresul=document.querySelector('.cerrar-resultado');
+
+cerrarresul.addEventListener('click', cerrar);
+resultado.addEventListener('click', abrir);
+resultado.addEventListener('click', cambio);
+
+function cerrar(){
+    hammenu2.classList.add('inactive');
+}
+function abrir(){
+    hammenu2.classList.remove('inactive');
+}
+
+  </script>
+</body>
+</html>

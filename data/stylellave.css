@@ -1,0 +1,168 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700';
+html {
+  font-size: 1rem;
+}
+.sins {
+    text-decoration: none;
+    color: #858585;
+  }
+body {
+    background-color: #aaaab3;
+}
+
+.bracket {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0;
+}
+.sc {
+  cursor: default;
+}
+.bracket .round {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bracket .round .winners > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bracket .round .winners > div.matchups .matchup:last-child {
+  margin-bottom: 0 !important;
+}
+.bracket .round .winners > div.matchups .matchup .participants {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant {
+  box-sizing: border-box;
+  color: #858585;
+  border-left: 0.25rem solid #858585;
+  background: white;
+  width: 20rem;
+  height: 4rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant.winner {
+  color: #60c645;
+  border-color: #60c645;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant.loser {
+  color: #dc563f;
+  border-color: #dc563f;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant:not(:last-child) {
+  border-bottom: thin solid #f0f2f2;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant span {
+  margin: 0 1.25rem;
+  line-height: 2;
+  font-size: 1rem;
+  font-family: "Roboto Slab";
+}
+.bracket .round .winners > div.connector.filled .line, .bracket .round .winners > div.connector.filled.bottom .merger:after, .bracket .round .winners > div.connector.filled.top .merger:before {
+  border-color: #60c645;
+}
+.bracket .round .winners > div.connector .line, .bracket .round .winners > div.connector .merger {
+  box-sizing: border-box;
+  width: 2rem;
+  display: inline-block;
+  vertical-align: top;
+}
+.bracket .round .winners > div.connector .line {
+  border-bottom: thin solid #c0c0c8;
+  height: 4rem;
+}
+.bracket .round .winners > div.connector .merger {
+  position: relative;
+  height: 8rem;
+}
+.bracket .round .winners > div.connector .merger:before, .bracket .round .winners > div.connector .merger:after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  border: 0 solid;
+  border-color: #c0c0c8;
+}
+.bracket .round .winners > div.connector .merger:before {
+  border-right-width: thin;
+  border-top-width: thin;
+}
+.bracket .round .winners > div.connector .merger:after {
+  border-right-width: thin;
+  border-bottom-width: thin;
+}
+.bracket .round.quarterfinals .winners:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.bracket .round.quarterfinals .winners .matchups .matchup:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.bracket .round.semifinals .winners .matchups .matchup:not(:last-child) {
+  margin-bottom: 10rem;
+}
+.bracket .round.semifinals .winners .connector .merger {
+  height: 16rem;
+}
+.bracket .round.semifinals .winners .connector .line {
+  height: 8rem;
+}
+.bracket .round.finals .winners .connector .merger {
+  height: 3rem;
+}
+.bracket .round.finals .winners .connector .line {
+  height: 1.5rem;
+}
+.container {
+    min-width: 100px;
+    max-width: 300px;
+    margin-left: 80%;
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 750px) {
+    .container{
+      font-size: 1px;
+    }
+    .bracket .round .winners > div.matchups .matchup .participants .participant {
+      width: 1rem;
+      height: 4rem;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    }
+    html {
+      font-size: 2px;
+    }
+    
+  }
+  
+
+  h2 {
+    text-align: CENTER;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  .gancon {
+    text-align: left;
+    color: #60c645;
+  }
+.aux {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 8%;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
